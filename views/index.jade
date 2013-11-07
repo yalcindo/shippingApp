@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	.intro
+		h1 Sick of UPS And Fedex !!!
+		h2 Use Private Messenger 
+	.container
+		.row
+			
+			.row.col-md-2.div-from 
+				h4 Send From :
+			.row.col-md-2.div-origin 
+				input.form-control.loc-origin(type="text" placeholder="Boulder,Co")
+			.row.col-md-2.div-to
+				h4 Send To:
+			.row.col-md-3.div-dest
+				input.form-control.loc-dest(type="text" placeholder="Los Angeles,Ca")
+
+			.row.col-md-1.div-btn
+				button.find-btn.btn.btn-large.btn-primary(type="button") Find Messenger
+	link(rel="stylesheet", href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js")	
+	script(src="/javascripts/main.js")
+	link(rel="stylesheet", href="stylesheets/style.css")
