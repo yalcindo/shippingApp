@@ -41,25 +41,44 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// app.get('/', routes.index);
-// app.get('/users', user.list);
-app.get("/",function(req,res){
-  Messenger.find({dest:req.query.locOrigin},function(err,data){
-   	  console.log("database narrow: ",data);
-  });
-  res.render("index");
+ app.get('/', routes.index);
+ // later render with Routes
+app.get("/messenger",function(req,res){
+  res.render("messenger");
 });
 
-app.get("/messenger",function(req,res){
+app.get("/searchresult",function(req,res){
+   Messenger.find({origin:req.query.locOrigin,dest:req.query.locDest},function(err,data){
+      console.log("database narrow: ",data);
+      res.send(data);
+  });
+
+});
+
+app.get("/messengerinfo",function(req,res){
 	var messengerInfo = req.query;
   var messenger = new Messenger({
 		name:messengerInfo.name,
-		origin:messengerInfo.dest,
-		dest:messengerInfo.origin
+		origin:messengerInfo.origin,
+		dest:messengerInfo.dest,
+    photo:messengerInfo.photo
 	}); 
 	messenger.save();
-	res.render("messenger");
+	res.send(messengerInfo);
 });
+app.get('/:id', function(req, res) {
+  var messengerId = req.params.id;
+  console.log("id",messengerId);
+   Messenger.findOne({_id:messengerId},function(err,data){
+      console.log("database narrow: ",data);
+      res.render("messengerInfo",data);
+  });
+
+ 
+});
+
+
+
 
 
 http.createServer(app).listen(app.get('port'), function(){

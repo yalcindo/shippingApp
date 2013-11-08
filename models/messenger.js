@@ -8,7 +8,8 @@ var mongoose =require('mongoose');
 var messengerSchema = mongoose.Schema({
     name: String,
     origin:Array,
-    dest:Array
+    dest:Array,
+    photo:String
 });
 var Messenger=mongoose.model('Messenger',messengerSchema);
 

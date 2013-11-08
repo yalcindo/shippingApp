@@ -19,3 +19,26 @@ a {
 	text-align:center;
 	margin-bottom:50px;
 }
+#search-results{
+	margin-top:20px;
+	height:100px;
+	width:100%;
+}
+.ship-btn{
+	background-color:orange;
+	color:white;
+}
+img {
+	height:100px;
+	width:100px;
+}
+.messenger-name{
+	font-size: 200%;
+}
+.search-result{
+	background-color:white;
+}
+.messenger-photo{
+	height:200px;
+	width:200px;
+}
