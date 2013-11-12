@@ -33,8 +33,13 @@ var server = http.createServer(app)
 var io = socketio.listen(server);
 //--------------------------------DataBase Start here
 
+  MongoURI = (_ref = process.env.MONGOLAB_URI) != null ? _ref : 'mongodb://localhost/shippingData';
 
-mongoose.connect('mongodb://localhost/shippingData');
+  mongoose.connect(MongoURI);
+
+
+
+// mongoose.connect('mongodb://localhost/shippingData');
 
  Messenger.find({},function(err,data){
   
