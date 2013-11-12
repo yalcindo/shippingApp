@@ -1,16 +1,71 @@
 extends layout
 
 block content
-	h1 Messenger Info #{name}
-	img(src="#{photo}" class="messenger-photo")
-	h2 she can take your package from #{origin} to #{dest}
+	.nav-bar
+	.container.info-container.messengerinfo
+		.row.info-row
+			.col-md-3
+				img(src="#{photo}" class="messenger-photo")
+				h1 #{name}
+			.col-md-5
+				.col-md-12
+					h3 Pick Up Location :
+						span.cities  #{origin} 
+					h3 Delivery Location : 
+						span.cities #{dest}
+				.col-md-12.estimate
 
-
+				//- .col-md-5
+				//- 	h5 Amount you want to pay:
+				//- .col-md-6
+				//- 	input.form-control.input-name(name="Price", type="text", placeholder="Name your price")
+				
+			.col-md-4.right-nav
+				#map-canvas(data-origin="#{origin}" data-dest="#{dest}")
+				.col-md-12
+					button.contact-me.btn.btn-large.btn-danger(type="button") Contact me
+				.col-md-12.distance
+				.col-md-12
+					button.request.btn.btn-large.btn-warning(type="button" data-toggle="modal" data-target="#myModal") Request	Messenger
+				.col-md-12.message-send
+		.col-md-6.col-md-offset-2.about-me
+			h3 About Me		
+		.col-md-6.col-md-offset-2.review
+			h3 Ratings & Review
+			h5 Comments
+			p The best messenger ever
+			p Good timing
+			p King of delivery
+			p Wow factor
+	#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+					h4#myModalLabel.modal-title #{name}
+				form(role="form")		
+					.modal-body
+						
+						.col-md-4
+							h5 Offer An Amount:
+						.col-md-4
+							input.form-control.input-price(name="Price", type="text", placeholder="Name your price")
+						.col-md-5
+						.col-md-8
+							textarea.text-area(class="form-control" rows="3") Describe your Cargo
+					//- .modal-footer
+					.col-md-6.col-md-offset-8
+						.col-md-4
+							button.btn.btn-default(type='button', data-dismiss='modal') Close
+						.col-md-4
+							button.btn.btn-primary.send-button(type='button' data-dismiss='modal') Send
+			
 
 
 
 	link(rel="stylesheet", href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
 	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+	script(src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js")
 	script(src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js")	
-	script(src="/javascripts/main.js")
+	script(src="/javascripts/messengerhome.js")
 	link(rel="stylesheet", href="stylesheets/style.css")

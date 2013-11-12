@@ -2,11 +2,47 @@
   
 {{#each data}}
    <div class="result-div" data-id="{{_id}}">
-     <div class=" row search-result alert alert-info col-md-7">
-	     <div class="col-md-3"><image src={{photo}}></image></span> </div>
-	     <span class="messenger-name">{{name}}</span>
-	     <button class="btn row btn-large col-md-offset-7 ship-btn hidden" type="button">Ship with me</button>  
+
+     <div class=" container search-result alert alert-info col-md-8">
+     <div class="row">
+	    <div class="col-md-3">
+	     	<span>
+	     		<image src={{photo}}></image>
+	     	</span> 
+
+	    </div>
+	     <div class="col-md-3 messenger-name">
+	       <p> {{name}}</p>
+	       <p>Price: $34</p>
+	       <p>Rating:* * * * * </p>
+	     </div>
+	      <div class="col-md-3"></div>
+	     <div class="col-md-3">
+	     <button class="btn btn-large ship-btn hidden" type="button">Ship with me</button> 
+	     </div> 
+
+     </div>
      </div>
    </div>
 	{{/each}}
 </script>
+
+<script id="compare-template" type="text/x-handlebars-template">
+ <div class="danger alert-info col-md-8">
+ <div class="row">
+	 <div class="col-md-6">
+	  <p>{{ups.val1}}</p>
+	
+	<p>{{ups.val2}}</p>
+	<p>{{ups.val3}}</p>
+	<p>{{ups.val4}}</p>
+	</div>
+	</div>
+	</div>
+</script>
+
+
+
+
+
+

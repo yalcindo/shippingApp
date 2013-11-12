@@ -1,8 +1,51 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background-image:url('shipping.jpg');*/
+  background-image:url('world2.jpg');
+ 
 }
+.info-row{
+	margin:20px;
+}
+#datepicker{
+	
+}
+.header-all{
+	height:80px;
+	width:100%;
+	background-color:rgba(0,0,0,0.3);
+}
+.modal-content{
+	height:300px;
 
+}
+.modal-body{
+	height:200px;
+}
+.navbar{
+	padding:0;
+	margin:0;
+}
+.contact-me{
+margin:25px;
+}
+.request{
+	margin:25px;
+}
+.messengerinfo{
+color:#F0FFF0;
+background-color:rgba(0,0,0,0.5);
+}
+.header{
+	height:100px;
+	background-color:peachpuff;
+}
+.right-nav{
+	height:600px;
+	border-radius:10px;
+	/*border:1px solid peachpuff;*/
+}
 a {
   color: #00B7FF;
 }
@@ -28,12 +71,17 @@ a {
 	background-color:orange;
 	color:white;
 }
+.cities{
+	color:yellow;
+}
 img {
+	border-radius:6px;
 	height:100px;
 	width:100px;
+	background-color: white;
 }
 .messenger-name{
-	font-size: 200%;
+	font-size: 100%;
 }
 .search-result{
 	background-color:white;
@@ -41,4 +89,35 @@ img {
 .messenger-photo{
 	height:200px;
 	width:200px;
+}
+#map-messenger-home{
+	height:300px;
+	
+
+}
+ #map-canvas{
+  height:500px;
+  width:60%;
+ }
+
+
+.main-page-container{
+margin:100px;
+}
+.container-intro{
+  background-color:white;
+  margin-bottom:100px;
+  opacity:0.92;
+  border-radius:10px;
+
+}
+.review{
+	/*background-color:rgba(0,0,0,0.1);*/
+	color:orange;
+	border-radius:10px;
+
+}
+.right-nav{
+	margin:0;
+	padding:0;
 }
