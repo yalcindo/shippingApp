@@ -95,15 +95,10 @@ $(function(){
     $(".text-area").val("");
   });
   $(document).on("click",".my-location",function(){
-     // window.location.href="/clienttrack"
-    // var name =$(".my-location").data("name");
-    // var photo =$(".my-location").data("photo");
+     
+    var name =$(".my-location").data("name");
+    var photo =$(".my-location").data("photo");
 
-    //   var source3 = $("#messenger-template").html();
-    //   var messengerTemplate = Handlebars.compile(source3);
-    //   $messengerResult = $('#mes-info');
-    //   var info={name:name,photo:photo};
-    //   $messengerResult.html(messengerTemplate({info:info}));
-      window.location.href="/clienttrack";
+       window.location.href="/clienttrack?name="+name+"&photo="+photo;
   });
 });

@@ -41,6 +41,9 @@ background-color:rgba(0,0,0,0.5);
 	height:100px;
 	background-color:peachpuff;
 }
+.btn-homepage{
+	margin-top:20px;
+}
 .right-nav{
 	height:600px;
 	border-radius:10px;
@@ -93,11 +96,18 @@ img {
 #map-messenger-home{
 	height:500px;
 	width:60%;
-	
+	margin-left:20%;
 
+}
+#mes-info {
+	color:white;
+	margin-left:46%;
+	
 }
 .compare-box{
 	border-radius:10px;
+	background-color:rgba(0,0,0,0.1);
+	color:white;
 }
  #map-canvas{
   height:300px;

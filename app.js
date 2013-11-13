@@ -134,7 +134,8 @@ app.get("/messengertrack",function(req,res){
 //  res.render("clienttrack");
 // });
 app.get("/clienttrack",function(req,res){
-  res.render("clienttrack");
+    var data=req.query;
+  res.render("clienttrack",data);
 });
 app.get('/:id', function(req, res) {
   var messengerId = req.params.id;

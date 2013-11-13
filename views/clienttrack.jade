@@ -1,9 +1,12 @@
 extends layout
 
 block content
-	p Welcome to #{name}
 	#mes-info
-	
+		h1 Track Your Cargo
+		h2 Your messenger :
+		img(src="#{photo}")
+		h3 #{name}
+
 	#map-messenger-home
 
 
@@ -13,4 +16,5 @@ block content
 	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
 	script(src="/socket.io/socket.io.js")
 	script(type="text/javascript" src="javascripts/clienttrack.js")
+	link(rel="stylesheet", href="stylesheets/style.css")
 	
