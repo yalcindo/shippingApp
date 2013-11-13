@@ -3,7 +3,7 @@
 ### Live site: [shippingdojo.herokuapp.com](http://shippingdojo.herokuapp.com)
 
 ### Description:
-ShippingDojo is a crowdsourcing shipping application.
+ShippingDojo is a crowdsourcing shipping application. It matches messengers and couriers with people who want to send a cargo anywhere in the USA.
 
 
 ### Client-Side
@@ -25,4 +25,4 @@ ShippingDojo is a crowdsourcing shipping application.
 
 ### API's
 * Google Maps 
-*Twillio 
+* Twillio 
