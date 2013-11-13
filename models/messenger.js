@@ -10,7 +10,8 @@ var messengerSchema = mongoose.Schema({
     origin:Array,
     dest:Array,
     photo:String,
-    pickDate:Date
+    pickDate:Date,
+    price:Number
 });
 var Messenger=mongoose.model('Messenger',messengerSchema);
 

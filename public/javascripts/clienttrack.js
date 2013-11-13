@@ -6,7 +6,7 @@ var socket = io.connect();
      
     });
 
- var map = new google.maps.Map(document.getElementById('map-canvas'), 
+ var map = new google.maps.Map(document.getElementById('map-messenger-home'), 
   {
     center: new google.maps.LatLng(40.0176, -105.2797),
     zoom: 16,

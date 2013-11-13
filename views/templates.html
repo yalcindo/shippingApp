@@ -13,7 +13,7 @@
 	    </div>
 	     <div class="col-md-3 messenger-name">
 	       <p> {{name}}</p>
-	       <p>Price: $34</p>
+	       <p>Price:${{price}}</p>
 	       <p>Rating:* * * * * </p>
 	     </div>
 	      <div class="col-md-3"></div>
@@ -28,9 +28,9 @@
 </script>
 
 <script id="compare-template" type="text/x-handlebars-template">
- <div class="danger alert-info col-md-8">
+ <div class="danger alert-info col-md-12 compare-box">
  <div class="row">
-	 <div class="col-md-6">
+	 <div class="col-md-12">
 	  <p>{{ups.val1}}</p>
 	
 	<p>{{ups.val2}}</p>
@@ -41,7 +41,16 @@
 	</div>
 </script>
 
-
+<script id="messenger-template" type="text/x-handlebars-template">
+ <div class="danger alert-info col-md-12 compare-box">
+ <div class="row">
+	 <div class="col-md-12">
+	  <p>{{info.name}}</p>
+	
+	</div>
+	</div>
+	</div>
+</script>
 
 
 

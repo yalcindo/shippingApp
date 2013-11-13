@@ -9,10 +9,14 @@ $(function(){
         $(".input-origin").val("");
         var photo=$(".input-photo").val();
         $(".input-photo").val("");
-         console.log("dest",dest);
+         var price=$(".input-price").val();
+        $(".input-price").val("");
         
-		$.get("/mesregister",{name:messengerName,dest:dest,origin:origin,photo:photo},function(data){
+		$.get("/mesregister",{name:messengerName,dest:dest,origin:origin,photo:photo,price:price},function(data){
            console.log("Client data",data);
 		});     
 	});
+    $(document).on("click",".btn-homepage",function(){
+        window.location.href="/";
+    });
 });

@@ -41,9 +41,9 @@ var io = socketio.listen(server);
 
 // mongoose.connect('mongodb://localhost/shippingData');
 
- Messenger.find({},function(err,data){
-  
-});
+//  Messenger.find({},function(err,data){
+//   console.log("total data",data);
+// });
 
  // Messenger.remove({},function(err,data){
 
@@ -73,7 +73,6 @@ app.get("/header",function(req,res){
 
 app.get("/searchresult",function(req,res){
   Messenger.find({origin:req.query.locOrigin,dest:req.query.locDest},function(err,data){
-    console.log("database narrow: ",data);
     res.send(data);
   });
 });
@@ -84,7 +83,8 @@ app.get("/mesregister",function(req,res){
 		name:messengerInfo.name,
 		origin:messengerInfo.origin,
 		dest:messengerInfo.dest,
-    photo:messengerInfo.photo
+    photo:messengerInfo.photo,
+    price:messengerInfo.price
 	}); 
 
 	messenger.save();
@@ -119,24 +119,25 @@ app.post("/smssend",function(req,res){
 var users = {};
 io.sockets.on('connection', function (socketObj) {
   socketObj.on("sendcoords",function (data){
-    console.log("data on :",data);
+   
     // socketObj.broadcast.emit("loadcoords",data);
     io.sockets.emit("loadcoords",data);
-    console.log("data emit :",data);
   });
 });
 app.get("/messengertrack",function(req,res){
-
+ 
  res.render("messengertrack");
 });
 
-app.get("/clienttrack",function(req,res){
+// app.get("/clienttrack",function(req,res){
 
- res.render("clienttrack");
+//  res.render("clienttrack");
+// });
+app.get("/clienttrack",function(req,res){
+  res.render("clienttrack");
 });
 app.get('/:id', function(req, res) {
   var messengerId = req.params.id;
-  console.log("id",messengerId);
   Messenger.findOne({_id:messengerId},function(err,data){
 
      console.log("error",err);
@@ -147,6 +148,7 @@ app.get('/:id', function(req, res) {
     }
   });
 });
+// configuration for Heroku
 io.configure(function () {
   io.set("transports", ["xhr-polling"]);
   io.set("polling duration", 10);

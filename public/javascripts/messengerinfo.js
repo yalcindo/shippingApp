@@ -10,10 +10,10 @@ $(".container").on("click",".btn-messenger",function(e){
         $(".input-origin").val("");
         var photo=$(".input-photo").val();
         $(".input-photo").val("");
-         console.log("dest",dest);
-        
-		$.get("/messengerinfo",{name:messengerName,dest:dest,origin:origin,photo:photo},function(data){
-           console.log("Client data",data);
+        var price==$(".input-price").val();
+        $(".input-price").val("");
+		$.get("/messengerinfo",{name:messengerName,dest:dest,origin:origin,photo:photo,price:price},function(data){
+
 		});     
 	});
 });

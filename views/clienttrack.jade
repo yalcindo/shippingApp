@@ -1,14 +1,16 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}
-	#map-canvas
+	p Welcome to #{name}
+	#mes-info
+	
+	#map-messenger-home
 
 
 
 
-
+	include templates.html
 	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
 	script(src="/socket.io/socket.io.js")
 	script(type="text/javascript" src="javascripts/clienttrack.js")
+	

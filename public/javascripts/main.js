@@ -16,30 +16,27 @@ $(function(){
         var locOrigin= $(".loc-origin").val();
         var locDest= $(".loc-dest").val();
         var pickDate=$("#datepicker").val();
-        console.log("value ",pickDate);
         $(".intro").hide();
 
 		$.get("/searchresult",{locOrigin:locOrigin,locDest:locDest},function(data){
-            console.log("Client data",data);
 
             var source = $("#searchresult-template").html();
             var searchResultTemplate = Handlebars.compile(source);
             $searchResult = $('#search-results')
             $searchResult.html(searchResultTemplate({data:data}));
-            console.log("value compare",data[0]["dest"][0]==="Denver" && data[0]["origin"][0]==="Boulder")
-            if(data[0]["dest"][0]==="Denver" && data[0]["origin"][0]==="Boulder")
-            {
-                var source2 = $("#compare-template").html();
-                var compareTemplate = Handlebars.compile(source2);
-                $compareResult = $('#compare-div');
-                var compareUps={
-                    val1:"Ups Next Day  8 am --> $74.97",
-                    val2:"Ups Next Day 11 am -->  $41.82",
-                    val3:"Ups Next day 3 pm  --> $36.91",
-                    val4 :"Ups Ground 1 day -->12.52"
-                };
-                $compareResult.html(compareTemplate({ups:compareUps}))
-            }
+            // if(data[0]["dest"][0]==="Denver" && data[0]["origin"][0]==="Boulder")
+            // {
+            //     var source2 = $("#compare-template").html();
+            //     var compareTemplate = Handlebars.compile(source2);
+            //     $compareResult = $('.ups-compare');
+            //     var compareUps={
+            //         val1:"Ups Next Day  8 am --> $74.97",
+            //         val2:"Ups Next Day 11 am -->  $41.82",
+            //         val3:"Ups Next day 3 pm  --> $36.91",
+            //         val4 :"Ups Ground 1 day -->12.52"
+            //     };
+            //     $compareResult.html(compareTemplate({ups:compareUps}))
+            // }
 
 		});
 	});
@@ -59,7 +56,7 @@ $(function(){
         var messengerId=$(this).parents(".result-div").data("id");
         window.location.href= "/" + messengerId;
     });
-  console.log("date",$( "#datepicker" ).datepicker())
+    $( "#datepicker" ).datepicker();
 
 
 });
