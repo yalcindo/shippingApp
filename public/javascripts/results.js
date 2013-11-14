@@ -1,7 +1,6 @@
 $(function(){
 
-
-$(".container").on("click",".div-btn",function(e){
+    $(".container").on("click",".div-btn",function(e){
         window.location.href= "/results";
         var locOrigin= $(".loc-origin").val();
         var locDest= $(".loc-dest").val();
@@ -12,7 +11,6 @@ $(".container").on("click",".div-btn",function(e){
             var searchResultTemplate = Handlebars.compile(source);
             $searchResult = $('#search-results')
             $searchResult.html(searchResultTemplate({data:data}));
-            console.log("value compare",data[0]["dest"][0]==="Denver" && data[0]["origin"][0]==="Boulder")
             if(data[0]["dest"][0]==="Denver" && data[0]["origin"][0]==="Boulder")
             {
                 var source2 = $("#compare-template").html();

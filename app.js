@@ -28,9 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Create the server
 var server = http.createServer(app)
-
 //Start the web socket server
 var io = socketio.listen(server);
+
 //--------------------------------DataBase Start here
 
   MongoURI = (_ref = process.env.MONGOLAB_URI) != null ? _ref : 'mongodb://localhost/shippingData';
@@ -58,7 +58,7 @@ if ('development' == app.get('env')) {
  app.get('/', routes.index);
 
 
- // later render with Routes
+ // @TODO later render with Routes
 app.get("/messengerregister",function(req,res){
   res.render("mesregister");
 });
@@ -95,28 +95,28 @@ app.get("/mesregister",function(req,res){
 var client = new twilio.RestClient('ACd4ad7b1d116e503101ae10746ba8d11a', '6c4f274ecf41373c603e857e2cc45def');
 app.post("/smssend",function(req,res){
   
-//   console.log("area",req.body.textArea);
-//   client.sms.messages.create({
-//       to:'+12026153077',
-//       from:'+14109211887',
-//       body:req.body.textArea
-//       }, 
-//       function(error, message) {
+  console.log("area",req.body);
+  client.sms.messages.create({
+      to:'+12026153077',
+      from:'+14109211887',
+      body:"package: "+req.body.textArea +" price: "+req.body.price
+      }, 
+      function(error, message) {
 
-//       if (!error) {
-//         console.log('Success! The SID for this SMS message is:');
-//         console.log(message.sid);
+      if (!error) {
+        console.log('Success! The SID for this SMS message is:');
+        console.log(message.sid);
          
-//         console.log('Message sent on:');
-//         console.log(message.dateCreated);
-//       }
-//       else {
-//         console.log('Oops! There was an error.');
-//       }
-//   });
+        console.log('Message sent on:');
+        console.log(message.dateCreated);
+      }
+      else {
+        console.log('Oops! There was an error.');
+      }
+  });
 });
-// socket Io Messenger Track
-var users = {};
+
+// socket.io Messenger Track
 io.sockets.on('connection', function (socketObj) {
   socketObj.on("sendcoords",function (data){
    
@@ -125,16 +125,11 @@ io.sockets.on('connection', function (socketObj) {
   });
 });
 app.get("/messengertrack",function(req,res){
- 
  res.render("messengertrack");
 });
 
-// app.get("/clienttrack",function(req,res){
-
-//  res.render("clienttrack");
-// });
 app.get("/clienttrack",function(req,res){
-    var data=req.query;
+  var data=req.query;
   res.render("clienttrack",data);
 });
 app.get('/:id', function(req, res) {
@@ -155,6 +150,7 @@ io.configure(function () {
   io.set("polling duration", 10);
 });
 
+// Listen server
 
 server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -2,19 +2,22 @@ extends layout
 
 block content
 	include header.jade
-	.container	
+
+	.container.form-container
+		h1 Messenger Registration	
 		form.messenger-form 
-			.form-group.col-md-3
+			.form-group.col-md-12
 				input.form-control.input-name(name="name", type="text", placeholder="Name")
-			.form-group.col-md-3
+
+			.form-group.col-md-12
 				input.form-control.input-origin(name="origins", type="text", placeholder="Origins")
-			.form-group.col-md-3
+			.form-group.col-md-12
 				input.form-control.input-dest(name="destinations", type="text", placeholder="Destinations")
-			.form-group.col-md-3
+			.form-group.col-md-12
 				input.form-control.input-photo(name="photo", type="text", placeholder="Photo url")
 			//- .form-group.col-md-3
 			//- 	input.form-control.input-weight(name="max-weight", type="text", placeholder="max weight")
-			.form-group.col-md-3
+			.form-group.col-md-12
 				input.form-control.input-price(name="price", type="text", placeholder="Minumum price")
 			//- .form-group.col-md-3
 			//- 	input.form-control.input-fragile(name="fragile", type="text", placeholder="Fragile")

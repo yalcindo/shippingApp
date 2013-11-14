@@ -1,5 +1,6 @@
 $(function(){
-     console.log("date",$( ".input-date" ).datepicker())
+     // console.log("date",$( ".input-date" ).datepicker())
+     // @TODO seriliaza from the form
     $(".container").on("click",".btn-messenger",function(e){
         var messengerName= $(".input-name").val();
         $(".input-name").val("");

@@ -2,30 +2,35 @@ extends layout
 
 block content
 	.container.container-intro
-		.intro
-			h1 Shipping Dojo
-			button.reg-mes-btn.btn.btn-large.btn-primary(type="button") Messenger Register
-			
-			h2 Crowd-Source  your Shipping
-
+		h1.company-title Shipping Dojo
 		.main-page-container
-			.intro
-				
 			.row
 				//- .row.col-md-2.datepicker
 				//- 	input.form-control#datepicker(type="text" placeholder="Date")
 				.row.col-md-2.div-from 
 					h4 Send From :
-				.row.col-md-2.div-origin 
+				.row.col-md-3.div-origin 
 					input.form-control.loc-origin(type="text" placeholder="Boulder,Co")
 				.row.col-md-2.div-to
 					h4 Send To:
 				.row.col-md-3.div-dest
 					input.form-control.loc-dest(type="text" placeholder="Los Angeles,Ca")
 
-				.row.col-md-1.div-btn
+				.row.col-md-2.div-btn
 					button.find-btn.btn.btn-large.btn-primary(type="button") Find Messenger
-	.container.container-results
+		.container.info-box-div
+			.row
+				.col-md-4.info-box	
+					h3 Do you want to make some extra cash?
+					h3 Then sign up 
+
+					button.reg-mes-btn.btn.btn-large.btn-primary(type="button") Messenger Register
+				.col-md-4.info-box
+					h2 Crowd-Source  your Shipping
+					h3 1.Find people who can delivery your packages quickly
+				.col-md-4.info-box
+					h3 Faster and cheaper than traditional 
+		.container.container-results
 		.row
 			#compare-div.col-md-12
 		#search-results
