@@ -36,7 +36,7 @@ $(function(){
   function getDistance(response, status) {
       if(status==="OK") {
         var distance = response.rows[0].elements[0].distance.text;
-         mesPrice=getPrice(distance);
+        mesPrice=getPrice(distance);
         $(".distance").append("<h3>Distance Between two Cities: <span class='cities'>"+ distance+"</span></h3>");
         $(".estimate").html("<h3>ShipDojo suggested price : $ <span class='cities'>"+mesPrice+"</span></h3>");
          
