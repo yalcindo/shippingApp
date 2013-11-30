@@ -4,9 +4,12 @@ $(function(){
     	* when an user clicks 
     */
     var originTags=["Boulder","Boston","Boonsboro"];
-    
     $( ".loc-origin" ).autocomplete({
         source: originTags
+    });
+     var destTags=["Denver","Dennis","Dallas","Detroit"];
+    $( ".loc-dest" ).autocomplete({
+        source: destTags
     });
 
 	$(".container").on("click",".div-btn",function(e){ 

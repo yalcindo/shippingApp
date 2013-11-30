@@ -50,6 +50,11 @@ margin:25px;
 	font-style:italic;
 	color:black;
 }
+.text-info{
+	font-size:20px;
+	color:red;
+	margin-bottom:30px;
+}
 .messengerinfo{
 color:#F0FFF0;
 background-color:rgba(0,0,0,0.5);
