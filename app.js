@@ -72,9 +72,9 @@ var isAuthenticated = function(req, res, next) {
     }
 };
 passport.use(new FacebookStrategy({
-    clientID: '1438491799695718',
-    clientSecret: '95989621c09ddafa039c273410297145',
-    callbackURL: "http://yalcindo.com/auth/facebook/callback"
+    clientID: '752682668094444',
+    clientSecret: 'a0bd660dcf0b72ac4760ffd54adf4803',
+    callbackURL: "http://localhost:3006/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
      console.log('profile', profile);
