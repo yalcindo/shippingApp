@@ -74,7 +74,7 @@ var isAuthenticated = function(req, res, next) {
 passport.use(new FacebookStrategy({
     clientID: '1438491799695718',
     clientSecret: '95989621c09ddafa039c273410297145',
-    callbackURL: "http://localhost:3006/auth/facebook/callback"
+    callbackURL: "http://yalcindo.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
      console.log('profile', profile);
