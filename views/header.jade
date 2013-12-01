@@ -1,5 +1,13 @@
-//-@TODO add footer to pages
-//- .container
-//-   .header-all
-//-     p hey you
+nav.navbar.navbar-default(role='navigation')
+	h2
+		if !isAuthenticated
+			a(href='/auth/facebook') Login with Facebook
+		else
+			a(href='/logout') Logout
+
+	h2
+		a(href='/user') User Profile
+    
+
+
 
