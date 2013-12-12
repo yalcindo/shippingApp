@@ -82,7 +82,7 @@ passport.use(new FacebookStrategy({
         if(err) { return done(err); }
 
         // if the user exists
-        if(user) { 
+        if(User) { 
             done(null, user);
         }
         // otherwise create a new user
@@ -99,13 +99,13 @@ passport.use(new FacebookStrategy({
     })
   }
 ));
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
+passport.serializeUser(function(User, done) {
+  done(null, User.id);
 });
 
 passport.deserializeUser(function(id, done) {
     User.findById(id, function (err, user) {
-    done(err, user);
+    done(err, User);
   });
 });
 
@@ -113,7 +113,7 @@ passport.deserializeUser(function(id, done) {
 // app.get('/users', user.list);
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', 
-  passport.authenticate('facebook', { successRedirect: '/',
+  passport.authenticate('facebook', { successRedirect: '/',session:true,
                                       failureRedirect: '/' }));
 app.get('/', function(req, res) {
   res.render('index', { isAuthenticated: req.isAuthenticated() });
