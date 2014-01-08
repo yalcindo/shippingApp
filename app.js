@@ -74,7 +74,7 @@ var isAuthenticated = function(req, res, next) {
 passport.use(new FacebookStrategy({
     clientID: '752682668094444',
     clientSecret: 'a0bd660dcf0b72ac4760ffd54adf4803',
-    callbackURL: "http://localhost:3006/auth/facebook/callback"
+    callbackURL: "http://www.yalcindo.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
      console.log('profile', profile);
@@ -179,25 +179,25 @@ app.get("/mesregister",function(req,res){
 var client = new twilio.RestClient('ACd4ad7b1d116e503101ae10746ba8d11a', '6c4f274ecf41373c603e857e2cc45def');
 app.post("/smssend",function(req,res){
   
-  // console.log("area",req.body);
-  // client.sms.messages.create({
-  //     to:'+12026153077',
-  //     from:'+14109211887',
-  //     body:"package: "+req.body.textArea +" price: "+req.body.price
-  //     }, 
-  //     function(error, message) {
+  console.log("area",req.body);
+  client.sms.messages.create({
+      to:'+12026153077',
+      from:'+14109211887',
+      body:"package: "+req.body.textArea +" price: "+req.body.price
+      }, 
+      function(error, message) {
 
-  //     if (!error) {
-  //       console.log('Success! The SID for this SMS message is:');
-  //       console.log(message.sid);
+      if (!error) {
+        console.log('Success! The SID for this SMS message is:');
+        console.log(message.sid);
          
-  //       console.log('Message sent on:');
-  //       console.log(message.dateCreated);
-  //     }
-  //     else {
-  //       console.log('Oops! There was an error.');
-  //     }
-  // });
+        console.log('Message sent on:');
+        console.log(message.dateCreated);
+      }
+      else {
+        console.log('Oops! There was an error.');
+      }
+  });
 });
 
 // socket.io Messenger Track

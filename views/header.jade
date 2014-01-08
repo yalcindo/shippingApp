@@ -1,13 +1,25 @@
-nav.navbar.navbar-default(role='navigation')
-	h3
-		if !isAuthenticated
-			a(href='/auth/facebook') Login with Facebook
-		else
-			a(href='/logout') Logout
+//- nav.navbar.navbar-default(role='navigation')
+//- 	h3
+//- 		if !isAuthenticated
+//- 			a(href='/auth/facebook') Login with Facebook
+//- 		else
+//- 			a(href='/logout') Logout
 
-	h3
-		a(href='/user') User Profile
+//- 	h3
+//- 		a(href='/user') User Profile
     
 
+extends layout
+
+block header
+	nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+		a.navbar-brand.pull-left#add-post(href="/admin") Shipping Dojo
+		a.navbar-brand.pull-right#home-link(href="/") Home
+		a.navbar-brand.pull-right#login-link(href="/") Login
+	.jumbotron
+	
+			
+
+block content
 
 
